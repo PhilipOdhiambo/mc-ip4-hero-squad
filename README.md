@@ -24,10 +24,11 @@ To run a live demo:
 
 ## Technologies Used
 - java
-- java/spark
-- spark-handle-bars
+- java/spark server
+- spark-handle-bar templates
+- junit testing
 - gradle dependency manager
-- CSS
+- CSS styling
 - HTML
 
 
