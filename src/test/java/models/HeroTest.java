@@ -37,6 +37,6 @@ class HeroTest {
 
     // helper methods
     public  Hero setupNewHero() {
-        return new Hero("Hero name",30,"strength","weakness");
+        return new Hero("Hero name",30,"strength","weakness",1);
     }
 }

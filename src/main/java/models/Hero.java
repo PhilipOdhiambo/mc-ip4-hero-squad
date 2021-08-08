@@ -2,6 +2,8 @@ package models;
 
 public class Hero {
     private int id;
+    private int squadId;
+
     private String name;
     private int age;
     private String strength;
@@ -12,12 +14,14 @@ public class Hero {
             String name,
             int age,
             String strength,
-            String weakness
+            String weakness,
+            int squadId
     ) {
         this.name = name;
         this.age = age;
         this.strength = strength;
         this.weakness = weakness;
+        this.squadId = squadId;
     }
 
     // Getters and setters
@@ -61,4 +65,7 @@ public class Hero {
     public void setWeakness(String weakness) {
         this.weakness = weakness;
     }
+
+    // Overrides for object class add and hash()
+
 }
