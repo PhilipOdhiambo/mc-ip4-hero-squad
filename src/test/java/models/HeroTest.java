@@ -26,7 +26,7 @@ class HeroTest {
     @Test
     void newHero_strengthInstantiatedCorrectly_string() {
         Hero hero = setupNewHero();
-        assertEquals("strength", hero.getStrength());
+        assertEquals("strength", hero.getPower());
     }
 
     @Test

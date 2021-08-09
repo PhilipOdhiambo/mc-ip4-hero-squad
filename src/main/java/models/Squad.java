@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Objects;
+
 public class Squad {
     int id;
     int maxSize;
@@ -50,5 +52,24 @@ public class Squad {
 
     public void setCause(String cause) {
         this.cause = cause;
+    }
+
+    // Overrides
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Squad)) return false;
+        Squad squad = (Squad) obj;
+        return id == squad.id &&
+                Objects.equals(name, squad.name) &&
+                Objects.equals(maxSize,squad.maxSize) &&
+                Objects.equals(cause,squad.cause);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, id,maxSize,cause);
     }
 }
