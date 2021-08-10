@@ -1,8 +1,8 @@
-CREATE DATABASE heroSquad;
-\c heroSquad;
+CREATE DATABASE herosquad;
+\c herosquad;
 
 CREATE TABLE heroes (
-      id int PRIMARY KEY auto_increment,
+      id SERIAL PRIMARY KEY,
       name VARCHAR,
       age int,
       power VARCHAR,
@@ -11,10 +11,10 @@ CREATE TABLE heroes (
 );
 
 CREATE TABLE squads (
-    id int PRIMARY KEY auto_increment,
+    id SERIAL PRIMARY KEY,
     name VARCHAR,
     cause VARCHAR,
     maxSize int
 );
 
-CREATE DATABASE heroSquad_test WITH TEMPLATE heroSquad;
+CREATE DATABASE herosquad_test WITH TEMPLATE herosquad;
