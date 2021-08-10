@@ -1,2 +1,2 @@
-DROP DATABASE heroSquad_test;
-DROP DATABASE heroSquad
+DROP DATABASE herosquad_test;
+DROP DATABASE herosquad
