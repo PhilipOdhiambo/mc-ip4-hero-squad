@@ -3,9 +3,9 @@ package dao;
 import models.Hero;
 import models.Squad;
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
@@ -17,8 +17,8 @@ public class Sql2oSquadDaoTest {
 
     @BeforeAll
     static void setUp() {
-        String connString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
-        Sql2o sql2o = new Sql2o(connString,"","");
+        String connString = "jdbc:postgresql://localhost:5432/herosquad_test";
+        Sql2o sql2o = new Sql2o(connString,"philip","1234");
         squadDao = new Sql2oSquadDao(sql2o);
         heroDao = new Sql2oHeroDao(sql2o);
         conn = sql2o.open();

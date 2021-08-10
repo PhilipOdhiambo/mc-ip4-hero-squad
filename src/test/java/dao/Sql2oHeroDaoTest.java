@@ -14,8 +14,8 @@ class Sql2oHeroDaoTest {
     private static Connection conn;
     @BeforeAll
     static void beforeAll() {
-        String connString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
-        Sql2o sql2o = new Sql2o(connString,"","");
+        String connString = "jdbc:postgresql://localhost:5432/herosquad_test";
+        Sql2o sql2o = new Sql2o(connString,"philip","1234");
         heroDao = new Sql2oHeroDao(sql2o);
         conn = sql2o.open();
     }
