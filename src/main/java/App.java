@@ -47,6 +47,7 @@ public class App {
             model.put("squad",activeSquad);
             model.put("numberOfHeroes", numberOfHeroes);
             model.put("heroes",squadHeroes);
+            model.put("maxReached", numberOfHeroes == activeSquad.getMaxSize());
             return new ModelAndView(model,"hero-squad-detail.hbs");
         }, new HandlebarsTemplateEngine());
 

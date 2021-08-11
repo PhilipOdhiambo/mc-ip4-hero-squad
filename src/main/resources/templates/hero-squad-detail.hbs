@@ -1,24 +1,55 @@
 {{#partial "content"}}
-    <h2>Squad Details </h2>
-    <div class="card">
-        <h4>Name: {{squad.name}}</h4>
+    <h2 class="text-light">Squad Details </h2>
+    <div class="card p-4">
+        <h6>Name: {{squad.name}}</h6>
         <h6>Max Number: {{squad.maxSize}} </h6>
-        {{#if heroes}}
-            <h6>Current Number: {{numberOfHeroes}}</h6>
-            {{#each heroes}}
-                <p>{{name}}</p>
-                <p>{{age}}</p>
-                <p>{{power}}</p>
-                <p>{{weakness}}</p>
-                <a href="/heroes/{{id}}/update">Update Hero</a>
-                <a href="/heroes/{{id}}/delete">Delete</a>
-
-            {{/each}}
-        {{else}}
-            <p>No heroes At the moment</p>
-            <a href="/hero-squad/{{squad.id}}/new-hero-form">Recruit For the Cause</a>
-        {{/if}}
+         <h6>Current Number: {{numberOfHeroes}}</h6>
     </div>
+    {{#if maxReached}}
+        <h3 style="color: red;">To Capacity</h3>
+     {{else}}
+        <div class="bg-light pb-5" style="min-height:20px; height:50px;">
+           <a  href="/hero-squad/{{squad.id}}/new-hero-form" style="color: green;font-size:25px;display:inline-block;height:30px;">
+            <span class="material-icons bg-light"> add_circle</span>
+            Add A superhero
+            </a>
+        </div>
+
+    {{/if}}
+u
+    {{#if heroes}}
+        <table class="table bg-light overflow-auto" style="height:40vh">
+            <thead>
+                <th>Hero Name</th>
+                <th>Strength</th>
+                <th>Age</th>
+                <th>Weakness</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </thead>
+            <tbody>
+                {{#each heroes}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{power}}</td>
+                        <td>{{age}}</td>
+                        <td>{{weakness}}</td>
+                        <td> <a href="/heroes/{{id}}/update">Update Hero</a></td>
+                        <td><a href="/heroes/{{id}}/delete"><span class="material-icons" style="color:red;">delete</span></a></td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+
+    {{else}}
+        <div class="bg-light">
+            <p>No super hero in this category yet. Please add one..</p>
+            <a href="/hero-squad/{{squad.id}}/new-hero-form">Recruit For the Cause</a>
+        </div>
+
+    {{/if}}
+
 {{/partial}}
 
 {{> layout.hbs}}

@@ -1,27 +1,38 @@
 {{#partial "content"}}
-    <h4>Edit: {{hero.name}}</h4>
-        <form action="/hero/update" method="POST">
-            <div class="form-field">
-                <label for="edit-hero-name">Edit name: </label>
-                <input class="form-control" required type="text" id="edit-hero-name" name="edit-hero-name" value="{{hero.name}}">
-            </div>
-            <div class="form-field">
-                <label for="edit-hero-age">Edit age: </label>
-                <input class="form-control" required type="number" id="edit-hero-age" name="edit-hero-age" value="{{hero.age}}">
-            </div>
-            <div class="form-field">
-                <label for="edit-hero-power">Edit power: </label>
-                <input class="form-control" required type="text" id="edit-hero-power" name="edit-hero-power" value="{{hero.power}}">
-            </div>
-            <div class="form-field">
-                <label for="edit-hero-weakness">Edit weakness: </label>
-                <input class="form-control" required type="text" id="edit-hero-weakness" name="edit-hero-weakness" value="{{hero.weakness}}">
-            </div>
-            <input hidden type="number" name="id" id="id" value="{{hero.id}}">
+    <div class="row" style="height 90%;">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h4 class="bg-light">Edit Hero : {{hero.name}}</h4>
+            <form action="/hero/update" method="POST" class="bg-light opacity-75 p-4 text-dark"
+            style="border:2px solid green">
+                <div class="form-field">
+                    <label for="edit-hero-name">Edit name: </label>
+                    <input class="form-control" required type="text" id="edit-hero-name" name="edit-hero-name" value="{{hero.name}}">
+                </div>
+                <div class="form-field">
+                    <label for="edit-hero-age">Edit age: </label>
+                    <input class="form-control" required type="number" id="edit-hero-age" name="edit-hero-age" value="{{hero.age}}">
+                </div>
+                <div class="form-field">
+                    <label for="edit-hero-power">Edit power: </label>
+                    <input class="form-control" required type="text" id="edit-hero-power" name="edit-hero-power" value="{{hero.power}}">
+                </div>
+                <div class="form-field">
+                    <label for="edit-hero-weakness">Edit weakness: </label>
+                    <input class="form-control" required type="text" id="edit-hero-weakness" name="edit-hero-weakness" value="{{hero.weakness}}">
+                </div>
+                <input hidden type="number" name="id" id="id" value="{{hero.id}}">
+                <div class="text-center p-4">
+                    <button class="btn btn-outline-success m-2">Submit</button>
+                    <a class="btn btn-outline-primary m-2" href="">Undo</a>
+                </div>
 
-            <input type="submit" value="Save Changes">
-            <a href="">Undo</a>
-        </form>
+
+            </form>
+
+        </div>
+        <div class="col-md-2"></div>
+    </div>
 
 {{/partial}}
 
