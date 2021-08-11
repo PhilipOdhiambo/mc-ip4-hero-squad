@@ -1,1 +1,24 @@
-<h2>Herosquad-detail works!</h2>
+{{#partial "content"}}
+    <h2>Squad Details </h2>
+    <div class="card">
+        <h4>Name: {{squad.name}}</h4>
+        <h6>Max Number: {{squad.maxSize}} </h6>
+        {{#if heroes}}
+            <h6>Current Number: {{numberOfHeroes}}</h6>
+            {{#each heroes}}
+                <p>{{name}}</p>
+                <p>{{age}}</p>
+                <p>{{power}}</p>
+                <p>{{weakness}}</p>
+                <a href="/heroes/{{id}}/update">Update Hero</a>
+                <a href="/heroes/{{id}}/delete">Delete</a>
+
+            {{/each}}
+        {{else}}
+            <p>No heroes At the moment</p>
+            <a href="/hero-squad/{{squad.id}}/new-hero-form">Recruit For the Cause</a>
+        {{/if}}
+    </div>
+{{/partial}}
+
+{{> layout.hbs}}
