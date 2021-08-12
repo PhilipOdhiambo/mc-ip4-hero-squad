@@ -28,15 +28,6 @@ body {
     color: blueviolet;
    }
 
-   .landing-page-container {
-       padding: 2rem;
-       margin-left: 1rem;
-       margin-right: 1rem;
-       color: white;
-       font-size: 36px;
-       text-align:center;
-       height: 100vh;
-   }
 
    .form-field {
         padding: .5rem;

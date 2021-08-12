@@ -1,20 +1,44 @@
 
 {{#partial"content"}}
-    <div class="landing-page-container d-flex flex-column justify-content-around align-items-center">
-        <h2 class="text-light" style="font-size: 60px;">Welcome</h2>
+    <style>
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h2 {
+            margin-top: 3rem;
+        }
+        .intro {
+            color: #6d29ae;
+        }
+        p {
+            font-size: 50px;
+            text-align: center;
+            background-color: black;
+            line-height: 1.2em;
 
-        <div class="intro text-primary opacity-75" style="color:#3fc301;">
-            <p>In a world of chaos and strife, there is always need for super heroes:</p>
+            color:
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 
-            <h5>Specials people for special tasks.</h5>
+    <div class="container">
 
-            <p>Enlist our superhero squad or recruit your own </p>
-            <a class="btn btn-primary text-light rounded-circle" href="/hero-squad">
-                <h3>checkout Hero Squad</h3>
-            </a>
+        <h2 class="text-light" style="font-size: 70px;">Welcome</h2>
 
+        <div class="intro opacity-75">
+            <p>In a world of chaos and strife,</p>
+            <p>There is need for Super Heroes</p>
+            <h3>Specials people for special tasks.</h3>
         </div>
 
+            <a class="btn btn-primary text-light rounded-pill mt-3 p-2" href="/hero-squad">
+                <h3>checkout Our Hero Squad</h3>
+            </a>
     </div>
 
 {{/partial}}
