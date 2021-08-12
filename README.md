@@ -18,14 +18,15 @@ A  hero can only belong to one squad at a time.
 
 ## Live Demo
 
-To run a live demo:
+See the app [deployed here.](https://mc-ip4-hero-squad.herokuapp.com/hero-squad)
+
 
 
 
 ## Technologies Used
-- java
-- java/spark server
-- spark-handle-bar templates
+- java 
+- sparkjava
+- handlebars
 - junit testing
 - gradle dependency manager
 - CSS styling
