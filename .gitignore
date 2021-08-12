@@ -12,7 +12,7 @@ Thumbs.db
 build/
 out/
 out
-.gradle/
+.gradle
 # gradle
  gradlew.bat
 # gradlew
