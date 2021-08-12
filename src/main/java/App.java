@@ -14,7 +14,16 @@ import static spark.Spark.*;
 
 public class App {
 
+    // Configure port
+    static int getPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null)
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        return 4567;
+    }
+
     public static void main(String[] args) {
+        port(getPort());
         staticFileLocation("/public");
         String connectionString = "jdbc:postgresql://localhost:5432/herosquad";
         Sql2o sql2o = new Sql2o(connectionString, "philip", "1234");
