@@ -90,6 +90,10 @@ public class App {
             String heroWeakness = req.queryParams("hero-weakness");
             int heroAge = Integer.parseInt(req.queryParams("hero-age"));
             int squadId = Integer.parseInt(req.queryParams("id"));
+            // Check if squad exit before saving hero with this squadId
+            if(squadDao.findById(squadId).getId() != squadId) {
+                res.redirect("/hero-squad");
+            }
             Hero hero = new Hero(heroName,heroAge,heroPower,heroWeakness,squadId);
             heroDao.add(hero);
             res.redirect("/hero-squad/" + req.queryParams("id"));
