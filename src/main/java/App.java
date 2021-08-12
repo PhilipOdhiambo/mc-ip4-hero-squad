@@ -25,8 +25,17 @@ public class App {
     public static void main(String[] args) {
         port(getPort());
         staticFileLocation("/public");
-        String connectionString = "jdbc:postgresql://localhost:5432/herosquad";
-        Sql2o sql2o = new Sql2o(connectionString, "philip", "1234");
+
+        // Local connection string;
+        //String connectionString = "jdbc:postgresql://localhost:5432/herosquad";
+
+        // Heroku connection string
+        String host = "ec2-34-234-12-149.compute-1.amazonaws.com";
+        String user = "efruqvhzekfish";
+        String password = "753e8fff14dba2b2a5d90d8c012db99b16d288be67bcea77eac2e5b833beaa7f";
+
+        String connectionString = "jdbc:postgresql://" + host + ":5432/de95p1vblei1va";
+        Sql2o sql2o = new Sql2o(connectionString, user, password);
         Sql2oHeroDao heroDao = new Sql2oHeroDao(sql2o);
         Sql2oSquadDao squadDao = new Sql2oSquadDao(sql2o);
 
